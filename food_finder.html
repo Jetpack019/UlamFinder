@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Food</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="style_food_finder.css">
+
+     <!-- Boxicons -->
+     <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-icon">
+          <img src="images/foodfinder.png" alt="Loading Icon">
+      </div>
+        <div class="loading-bar"></div>
+        <div class="loading-text">Finding Food...</div>
+     </div>
+    <header >
+        <a href=homepage.html class="back_btn"><i class='bx bx-arrow-back'></i></a>
+
+        <ul class="navbar">
+            <li><a href=food_finder.html >DISH</a></li>
+            <li><a href=meryenda_finder.html>SNACKS</a></li>
+            <li><a href=drinks_finder.html>DRINKS</a></li>
+        </ul>
+    </header>
+
+    <section class="find_ulam" id="find_ulam">
+        <div class="find_ulam_container">
+            <h2><span>ULAM</span> FINDER</h2>
+            <div class="all_container">
+                <div class="left_container">
+                    <div class="content_left">
+                        <fieldset>
+                            <form action="results.html" class="form_container" id="form">
+                                <h3>Choose what type of weather now in your area</h3>
+                
+                                <div class="checkbox-container" id="weather_form">
+                                    <label><input type="checkbox" name="weather" id="rainy" value="Rainy"><span>Rainy</span> </label><br>
+                                    <label><input type="checkbox" name="weather" id="cloudy" value="Cloudy"><span>Cloudy</span></label><br>
+                                    <label><input type="checkbox" name="weather" id="hot" value="Hot"><span>Hot</span></label><br>
+                                    <label><input type="checkbox" name="weather" id="humid" value="Humid"><span>Humid</span></label>
+                                </div>
+                
+                                <h3>Choose Date</h3>
+                                <div class="select-container" id="month">
+                                    <select id="date_month">
+                                      <option value="" >Month</option>
+                                      <option>January</option>
+                                      <option>February</option>
+                                      <option>March</option>
+                                      <option>April</option>
+                                      <option>May</option>
+                                      <option>June</option>
+                                      <option>July</option>
+                                      <option>August</option>
+                                      <option>September</option>
+                                      <option>October</option>
+                                      <option>November</option>
+                                      <option>December</option>
+                                    </select>
+                
+                                    <select id="date_day">
+                                        <option value="">Day</option>
+                                        <option>Monday</option>
+                                        <option>Tuesday</option>
+                                        <option>Wednesday</option>
+                                        <option>Thursday</option>
+                                        <option>Friday</option>
+                                        <option>Saturday</option>
+                                        <option>Sunday</option>
+                                    </select>
+                
+                                    
+                                </div>
+                
+                                <h3>Choose Location</h3>
+                                <div class="select-container">
+                                    <select id="option_location">
+                                        <option value="">Location</option>
+                                        <option >Option 3.1</option>
+                                        <option >Option 3.2</option>
+                                        <option >Option 3.3</option>
+                                    </select>
+                                </div>
+                                
+                                <h3>Budget</h3>
+                                <div class="form_budget">
+                                    <input placeholder="Enter Budget" type="text" id="budget"></input>
+                                </div>
+                                
+                                <h3>People</h3>
+                                <div class="form_people">
+                                    <input placeholder="No. of People" type="text" id="people"></input>
+                                </div>
+                
+                                <div class="checkbox_choose">
+                                    <label class="label1"  ><input type="checkbox" id="choose" type="checkbox" name="choose" value="Fast Food"><span>Fast Food</span></input></label>
+                                    <label class="label2"><input type="checkbox" id="choose" type="checkbox" name="choose" value="Do It Yourself"><span>Do it Yourself</span></input></label>
+                                </div>
+                
+                                <div class="button-container">
+                                    <input class="big-btn" type="submit" value="Ulam Picker" onclick="getData()"></input>
+                                </div>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="right_container">
+                    <div class="content_left">
+                        <img src="images/meal.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+     <script>
+       setTimeout(function(){
+         $('.loading-screen').fadeToggle();
+       }, 1500);
+     </script>
+
+    <script>
+        function getData()
+        {
+            var checks = document.getElementsByName('weather');
+            var str = '';
+            for(i = 0; i < 4; i++){
+                if(checks[i].checked == true){
+                    str += checks[i].value + " ";
+                }
+            }
+              //saving the values in local storage
+            localStorage.setItem("check_weather", str);
+
+            var option_location = document.getElementById("option_location").value;
+            localStorage.setItem("txt_option_location", option_location);
+
+            var budget = document.getElementById("budget").value;
+            localStorage.setItem("txt_budget", budget); 
+
+            var people = document.getElementById("people").value;
+            localStorage.setItem("txt_people", people); 
+
+
+            var date_month = document.getElementById("date_month").value;
+            localStorage.setItem("txt_date_month", date_month);
+
+            var date_day = document.getElementById("date_day").value;
+            localStorage.setItem("txt_date_day", date_day);
+
+            var choose_to = document.getElementsByName('choose');
+            var str1 = '';
+            for(i = 0; i < 2; i++){
+                if(choose_to[i].checked == true){
+                    str1 += choose_to[i].value + " ";
+                }
+            }
+              //saving the values in local storage
+            localStorage.setItem("txt_choose_to", str1);
+            
+        }
+    </script>
+    <script>
+                $("input:checkbox").on('click', function() {
+                var $box = $(this);
+                if ($box.is(":checked")) {  
+                    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                    $(group).prop("checked", false);
+                    $box.prop("checked", true);
+                } else {
+                    $box.prop("checked", false);
+        }
+        });
+    </script>
+</body>
+</html>

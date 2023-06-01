@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Food</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="style_food_finder.css">
+
+     <!-- Boxicons -->
+     <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-icon">
+          <img src="images/foodfinder.png" alt="Loading Icon">
+      </div>
+        <div class="loading-bar"></div>
+        <div class="loading-text">Finding Food...</div>
+     </div>
+     
+    <header>
+        <a href=homepage.html class="back_btn"><i class='bx bx-arrow-back'></i></a>
+
+        <ul class="navbar">
+            <li><a href=food_finder.html >DISH</a></li>
+            <li><a href=meryenda_finder.html>SNACKS</a></li>
+            <li><a href=drinks_finder.html>DRINKS</a></li>
+        </ul>
+    </header>
+
+    <section class="find_ulam" id="find_ulam">
+        <div class="find_ulam_container">
+            <h2><span>MERYENDA</span> FINDER</h2>
+            <div class="all_container">
+                <div class="left_container">
+                    <div class="content_left">
+                        <div class="form_container">
+                            <h3>Choose what type of weather now in your area</h3>
+            
+                            <div class="checkbox-container">
+                                <label><input type="checkbox" name="checkbox1"><span>Rainy</span> </label><br>
+                                <label><input type="checkbox" name="checkbox2"><span>Cloudy</span></label><br>
+                                <label><input type="checkbox" name="checkbox3"><span>Hot</span></label><br>
+                                <label><input type="checkbox" name="checkbox4"><span>Humid</span></label>
+                            </div>
+            
+                            <h3>Choose Date</h3>
+                            <div class="select-container">
+                                <select>
+                                  <option value="">Month</option>
+                                  <option>January</option>
+                                  <option>February</option>
+                                  <option>March</option>
+                                  <option>April</option>
+                                  <option>May</option>
+                                  <option>June</option>
+                                  <option>July</option>
+                                  <option>August</option>
+                                  <option>September</option>
+                                  <option>October</option>
+                                  <option>November</option>
+                                  <option>December</option>
+                                </select>
+            
+                                <select>
+                                    <option value="">Day</option>
+                                    <option>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                    <option>Sunday</option>
+                                </select>
+            
+                                
+                            </div>
+            
+                            <h3>Choose Location</h3>
+                            <div class="select-container">
+                                <select>
+                                    <option value="">Location</option>
+                                    <option value="">Option 3.1</option>
+                                    <option value="">Option 3.2</option>
+                                    <option value="">Option 3.3</option>
+                                </select>
+                            </div>
+                            
+                            <h3>Budget</h3>
+                            <div class="form_budget">
+                                <input placeholder="Enter Budget" type="text" ></input>
+                            </div>
+                            
+                            <h3>People</h3>
+                            <div class="form_people">
+                                <input placeholder="No. of People" type="text"></input>
+                            </div>
+            
+                            <div class="checkbox_choose">
+                                <input type="checkbox"></input>
+                                <label class="label1"><span>Fastfood</span></label>
+                                <input type="checkbox"></input>
+                                <label class="label2"><span>Do it Yourself</span></label>
+            
+                            </div>
+            
+                            <div class="button-container">
+                                <button class="big-btn" onclick="window.location.href='results.html'">ULAM PICKER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_container">
+                    <div class="content_left">
+                        <img src="images/snack.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script>
+      setTimeout(function(){
+        $('.loading-screen').fadeToggle();
+      }, 1500);
+    </script>
+</body>
+</html>

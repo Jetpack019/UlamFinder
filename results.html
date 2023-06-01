@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Picker</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="style_food_finder.css">
+     <link rel="stylesheet" href="results.css">
+
+     <!-- Boxicons -->
+     <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-icon">
+          <img src="images/foodfinder.png" alt="Loading Icon">
+      </div>
+        <div class="loading-bar"></div>
+        <div class="loading-text">Finding Food...</div>
+     </div>
+
+    <header>
+        <a href=food_finder.html class="back_btn"><i class='bx bx-arrow-back'></i></a>
+
+        <ul class="navbar">
+            <li><a href= >Search Picker Results</a></li>
+        </ul>
+    </header>
+    
+    <section class="result_find">
+        <h3>Results find near you:</h3>
+        <div class="sample_container">
+            
+                <div class="sample_result" ><span id="data"> </span></div>
+                <div class="sample_result" ><span id="data1"> </span></div>
+                <div class="sample_result" ><span id="data2"> </span></div>
+                <div class="sample_result" ><span id="data3"> </span></div>
+                <div class="sample_result" ><span id="data4"> </span></div>
+                <div class="sample_result" ><span id="data5"> </span></div>
+                <div class="sample_result" ><span id="data6"> </span></div>
+        </div>
+
+        <div class="result_find_container">
+           
+            <div class="first_result_container">
+                <h3>Do it yourself</h3>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result" ><span id="data"> </span></div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result" ><span id="data1"></span></div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result" ><span id="data2"></span></div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result" ><span id="data3"></span></div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result" ><span id="data4"></span></div>
+                </div>
+            </div>
+
+
+            <div class="second_result_container">
+                <h3>Fast Food</h3>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result"><span id="data5"></span></div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result"><span id="data6"></span></div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result">Adobo</div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result">Sinigang</div>
+                </div>
+                <div class="result_food_container">
+                    <img src="images/mc_pulilan.jfif" alt="">
+                    <div class="text_result">Kaldereta</div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="button-container">
+            <button class="big-btn" onclick="window.location.href='results.html'">PICK ANOTHER</button>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("data").innerHTML=localStorage.getItem("check_weather");
+       
+        document.getElementById("data1").innerHTML=localStorage.getItem("txt_budget");
+        document.getElementById("data2").innerHTML=localStorage.getItem("txt_date_month");
+        document.getElementById("data3").innerHTML=localStorage.getItem("txt_choose_to");
+        document.getElementById("data4").innerHTML=localStorage.getItem("txt_people");
+        document.getElementById("data5").innerHTML=localStorage.getItem("txt_date_day");
+        document.getElementById("data6").innerHTML=localStorage.getItem("txt_option_location");
+    </script>
+    <script>
+      setTimeout(function(){
+        $('.loading-screen').fadeToggle();
+      }, 1500);
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+:root{
+    --background-color: #B2ECE1;
+    --light-back-color:#FFEF82;
+    --text_color:#333;
+    --light-yellow:#FBC252;
+    --navbar_text_color:#fff;
+    --navbar_color: #FFB100;
+    --navbar_color_hover:transparent;
+    --second_color:#A3BB98;
+    --first_color: #E20A0A;
+    --gradient: linear-gradient(#E20A0A, #b47e00);
+}
+
+/* Custome Scroll Bar */
+html::-webkit-scrollbar{
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var( --background-color);
+    border-radius: 5rem;
+}
+
+
+.loading-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    z-index: 9999;
+}
+  
+.loading-icon img {
+    width: 350px;
+    height: 350px;
+    animation: fade-in-out 2s linear infinite;
+}
+  
+@keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+  
+.loading-bar {
+    width: 50%;
+    height: 10px;
+    background-color: var(--navbar_color);
+    border-radius: 10px;
+    animation: loading-animation 2s linear infinite;
+}
+  
+@keyframes loading-animation {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+}
+  
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: #EDAD1A;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navbar_color);
+    padding: 10px 100px;
+}
+
+header .back_btn i {
+    font-size: 30px;
+    font-weight: 600;
+    color:var(--navbar_text_color);
+}
+.navbar{
+    display: flex;
+}
+.navbar li{
+    position: relative;
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--navbar_text_color);
+}
+.navbar a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: var(--gradient);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar a:hover::after{
+    width: 100%;
+}
+
+
+/* Find Ulam Container */
+.find_ulam{
+    padding-top: 70px;
+}
+.find_ulam_container{
+    padding: 15px 100px;
+    background-color: var(--light-yellow);
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 20px;
+}
+.all_container{
+    display: flex;
+    justify-content: space-between;
+}
+.find_ulam_container h2{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--navbar_text_color);
+}
+
+.find_ulam_container h2 span{
+    color: var(--first_color);
+}
+
+fieldset{
+     margin: 0 auto; font-size: 30px; outline: none;  border: 0;
+}
+
+.form_container h3{
+    margin-top: 10px;
+    font-size:15px;
+}
+
+.checkbox-container{
+    text-align: center;
+    display: flex; 
+}
+
+.checkbox-container label{
+  margin-right: 20px;
+  font-size: 15px;
+  padding-right: 20px;
+}
+
+.checkbox-container label span{
+    padding-left: 5px;
+}
+
+.checkbox-container label input{
+    width: 15px;
+    height: 15px;
+    padding-right: 20px;
+}
+
+
+.checkbox-container input{
+    width: 15px;
+    height: 15px;
+    padding-right: 20px;
+}
+
+.content_left img{
+    width: 450px;
+    height: 350px;
+    margin-top: 60px;
+    margin-left: 40px;
+    border-radius: 50px;
+}
+/*  */
+
+
+.select-container {
+ 
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.select-container select {
+    margin-right: 20px;
+    width: 75%;
+    font-size: 15px;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+/*  */
+
+.form_budget input {
+    border-radius: 10px;
+    width: 75%;
+    height: 30px;
+    padding-left: 10px;
+    outline: 0;
+    border: 0;
+}
+
+.form_people input {
+    border-radius: 10px;
+    width: 75%;
+    height: 30px;
+    padding-left: 10px;
+    outline: 0;
+    border: 0;
+}
+
+.checkbox_choose{
+    display: flex; 
+    margin-top: 20px;
+    
+}
+
+.checkbox_choose label span{
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+.checkbox_choose label{
+    margin-right: 20px;
+}
+
+.button-container{
+    margin-top: 20px;
+}
+
+.button-container input{
+    padding: 20px 70px;
+    background-color: var(--navbar_color);
+    color: var(--navbar_text_color);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    outline: 0;
+    border: 0;
+    font-size: 12px;
+}
+.button-container input span{
+    font-size: 20px;
+}
+
+.button-container input:hover{
+    background-color: var(--text_color);
+    color: var(--navbar_text_color);
+    font-weight: 600;
+}

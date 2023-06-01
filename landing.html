@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login/Sign Up Form</title>
+  <link rel="stylesheet" type="text/css" href="style_landing.css">
+
+  
+     <!-- Boxicons -->
+     <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+     
+</head>
+
+<body>
+
+  <div class="loading-screen" id="loading-screen">
+
+    <div class="loading-icon">
+      <img src="images/foodfinder.png" alt="Loading Icon">
+  </div>
+
+    <div class="loading-bar"></div>
+    <div class="loading-text">Finding Food...</div>
+ </div>
+ 
+  <section class="login_user">
+    <div class="login_user_container">
+      <div class="left_login_user">
+        <h2><span>Food </span>Finder</h2>
+        <h3 class="second_text">Recent Login</h3>
+        <img src="images/user.jpg" alt="">
+        <i class='bx bx-plus'></i>
+      </div>
+
+      <div class="right_login_user">
+        <section class="login_form">
+          <div class="container">
+            <div class="login_logo_text">
+              <h1>Login To </h1>
+              <img src="images/logo.png" alt="">
+            </div>
+            <form action="homepage.html">
+              <div class="form-group">
+      
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+              
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+              </div>
+              <button type="submit"  class="normal"
+              value="Hover" onmouseover="mouseOver(this)" 
+              onmouseout="mouseOut(this)">Login</button>
+              <button type="button">Sign Up</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>
+    setTimeout(function(){
+      $('.loading-screen').fadeToggle();
+    }, 1500);
+
+    
+  </script>
+
+<script src="main.js"></script>
+</body>
+
+</html>
